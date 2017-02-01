@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /root/sql_job/mailq
+cd $( cd $(dirname $0) ; pwd )
 ./mem_limit.sh 2800M ./send_mail.pl
