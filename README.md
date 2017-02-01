@@ -21,7 +21,7 @@ edit send_mail_defaults.pm
 
 Example usage:
 
-<code>
+<pre>
   INSERT INTO tools.mailq (msg_from, msg_to, msg_subject, msg_body,  `mode`, sql_command, on_error, file_name, xls_opts)
                 VALUES ('FROM@example.com', #from
                 'to1@example.com,to2@example.com', #to
@@ -57,4 +57,4 @@ Example usage:
                  }
                    ' # xls_opts
                  );
-</code>
+</pre>
