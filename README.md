@@ -1,5 +1,6 @@
 # mysql-excel-mailer
-Send email from mysql stored procedure. Email atachment (excel) generated from sql select with multiple resultset.
+Send email from mysql stored procedure. Email atachment (excel - XLSX ) generated from SQL SELECT with multiple resultset.
+
 How to use:
 
 Create table mailq:
@@ -10,9 +11,11 @@ install dependencies:
 
 apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libexcel-writer-xlsx-perl libmime-base64-urlsafe-perl  libfile-copy-recursive-perl 
 
-edit send_mail_defaults.pm
+Edit send_mail_defaults.pm
 
+Insert a line mailq (like example)
 
+Start send_mail.pl (perl send_mail.pl)
 
 
 
@@ -22,10 +25,11 @@ edit send_mail_defaults.pm
 Example usage:
 
 <pre>
-  INSERT INTO tools.mailq (msg_from, msg_to, msg_subject, msg_body,  `mode`, sql_command, on_error, file_name, xls_opts)
-                VALUES ('FROM@example.com', #from
-                'to1@example.com,to2@example.com', #to
-                concat('SUBJECT - ',date_format(now(),'%Y-%m-%d')), #msg_subject
+  INSERT INTO tools.mailq (msg_from, msg_to, msg_subject, msg_body,  `mode`, 
+		sql_command, on_error, file_name, xls_opts)
+                VALUES ('FROM@example.com',                            #from
+                'to1@example.com,to2@example.com',                     #to
+                concat('SUBJECT - ',date_format(now(),'%Y-%m-%d')),    #msg_subject
                 'Dear ..!<br><br>I send it. <br><br>', #msg_body
                 2, #mode (Send results in email)
                 "select 1 as res1 ; select 2 as res2; select 3 as res3;select 4 as res4;
@@ -55,6 +59,6 @@ Example usage:
                                    "hun_corr": "1"
                                  }                             
                  }
-                   ' # xls_opts
+                   '                                                   # xls_opts
                  );
 </pre>
