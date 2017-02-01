@@ -3,9 +3,11 @@ Send email from mysql stored procedure. Email atachment (excel) generated from s
 How to use:
 
 Create table mailq:
+
 cat create.sql | mysql databasename
 
 install dependencies:
+
 apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libexcel-writer-xlsx-perl libmime-base64-urlsafe-perl  libfile-copy-recursive-perl 
 
 edit send_mail_defaults.pm
@@ -17,9 +19,9 @@ edit send_mail_defaults.pm
 
 
 
-Examples usage:
+Example usage:
 
-
+<code>
   INSERT INTO tools.mailq (msg_from, msg_to, msg_subject, msg_body,  `mode`, sql_command, on_error, file_name, xls_opts)
                 VALUES ('FROM@example.com', #from
                 'to1@example.com,to2@example.com', #to
@@ -55,3 +57,4 @@ Examples usage:
                  }
                    ' # xls_opts
                  );
+</code>
