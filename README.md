@@ -1,24 +1,28 @@
 # mysql-excel-mailer
-Send email from mysql stored procedure. Email atachment (excel - XLSX ) generated from SQL SELECT with multiple resultset.
+Send email from mysql stored procedure. Email attachment (excel - XLSX ) generated from SQL SELECT with multiple result set.
 
 How to use:
 
 Create table mailq:
-
+<pre>
 cat create.sql | mysql databasename
-
+</pre>
 install dependencies:
-
-apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libexcel-writer-xlsx-perl libmime-base64-urlsafe-perl  libfile-copy-recursive-perl 
+<code>
+apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libexcel-writer-xlsx-perl libmime-base64-urlsafe-perl  libfile-copy-recursive-perl cgmanager
+</code>
 
 Edit send_mail_defaults.pm
 
-Insert a line mailq (like example)
+Insert a line into mailq (like example)
 
-Start send_mail.pl (perl send_mail.pl)
+Start manual send_mail.pl (perl send_mail.pl) or add /etc/crontab:
 
+<pre>
+*/2 * * * *	root	/SCRIPTPATH/send_mail_starter.sh
+<pre>
 
-
+Enyoj it!
 
 
 
