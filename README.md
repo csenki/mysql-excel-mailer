@@ -14,6 +14,7 @@ apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libex
 
 Edit send_mail_defaults.pm
 
+
 Insert a line into mailq (like example)
 
 Start manual send_mail.pl (perl send_mail.pl) or add /etc/crontab:
