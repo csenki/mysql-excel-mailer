@@ -20,7 +20,7 @@ Start manual send_mail.pl (perl send_mail.pl) or add /etc/crontab:
 
 <pre>
 */2 * * * *	root	/SCRIPTPATH/send_mail_starter.sh
-<pre>
+</pre>
 
 Enyoj it!
 
