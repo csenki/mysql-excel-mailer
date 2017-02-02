@@ -12,7 +12,7 @@ use File::Basename;
 use File::Copy;
 #use Data::Dumper;
 require "autofit.pm";
-require "send_mail_dev_defaults.pm";
+require "send_mail_defaults.pm";
 
 ##Global declarations
 my $xlsfilename , $main::dbh ,$main::decoded_json,$main::line,$main::thrcnt;
