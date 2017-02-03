@@ -21,7 +21,7 @@ Edit send_mail_defaults.pm
 
 Insert a line into mailq (like example)
 
-Start manual send_mail.pl (perl send_mail.pl) or add /etc/crontab (evrey 2 munutes start send_mail.pl):
+Start manual send_mail.pl (<code>perl send_mail.pl</code>) or add /etc/crontab (evrey 2 munutes start send_mail.pl):
 
 <pre>
 */2 * * * *	root	/SCRIPTPATH/send_mail_starter.sh
