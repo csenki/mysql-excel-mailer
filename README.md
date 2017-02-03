@@ -8,11 +8,12 @@ apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libex
 </code>
 
 Download:
-<code>
+<pre>
 cd /opt
 git clone https://github.com/csenki/mysql-excel-mailer
 cd mysql-excel-mailer
-</code>
+</pre>
+
 Create table mailq:
 <pre>
 cat create.sql | mysql databasename
