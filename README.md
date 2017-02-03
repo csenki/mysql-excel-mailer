@@ -12,7 +12,11 @@ install dependencies:
 apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libexcel-writer-xlsx-perl libmime-base64-urlsafe-perl  libfile-copy-recursive-perl cgmanager cgmanager-utils
 </code>
 
-Edit send_mail_defaults.pm
+<code>
+cp send_mail_defaults_template.pm send_mail_defaults.pm
+</code>
+
+Edit send_mail_defaults.pm 
 
 
 Insert a line into mailq (like example)
