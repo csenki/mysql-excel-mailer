@@ -150,9 +150,18 @@ sub query_to_xlsx {
     $workbook->set_properties(
 	 author   => $send_mail_defaults::AUTHOR,
     );
-    my $default_format = $workbook->add_format( num_format => '@' );
-	my $nformat = $workbook->add_format(num_format => '### ### ### ###');
-	$nformat->set_border(0);
+    my $mnun;
+    $mnum='@';
+    if( $main::decoded_json->{"def_num_format"} neq ""  ){
+        $mnum=$main::decoded_json->{"def_num_format"};
+    }
+    my $default_format = $workbook->add_format( num_format => $mnum );
+    $mnum='### ### ### ###';
+    if( $main::decoded_json->{"num_num_format"} neq ""  ){
+        $mnum=$main::decoded_json->{"num_num_format"};
+    }    
+    my $nformat = $workbook->add_format(num_format => $mnum);
+    $nformat->set_border(0);
     $nformat->set_font($send_mail_defaults::FONT_NAME);
     $nformat->set_size($send_mail_defaults::FONT_SIZE);
 	
