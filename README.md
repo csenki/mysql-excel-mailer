@@ -1,5 +1,5 @@
 # mysql-excel-mailer
-Send email from mysql stored procedure. Email attachment (excel - XLSX ) generated from SQL SELECT with multiple result set.
+Send email from MySQL (or MariaDB) stored procedure. Email attachment (excel - XLSX) generated from SQL SELECT with multiple result set.
 
 How to use:
 install dependencies:
@@ -28,7 +28,7 @@ Edit send_mail_defaults.pm
 
 Insert a line into mailq (like example)
 
-Start manual send_mail.pl (<code>perl send_mail.pl</code>) or add /etc/crontab (evrey 2 munutes start send_mail.pl):
+Start manual send_mail.pl (<code>perl send_mail.pl</code>) or add to /etc/crontab (every 2 minutes start send_mail.pl):
 
 <pre>
 */2 * * * *	root	/opt/mysql-excel-mailer/send_mail_starter.sh
