@@ -2,7 +2,8 @@
 Send email from MySQL (or MariaDB) stored procedure. Email attachment (excel - XLSX) generated from SQL SELECT with multiple result set.
 
 How to use:
-install dependencies:
+
+install dependencies (on UBUNTU):
 <code>
 apt install libmime-lite-perl libjson-xs-perl libdbi-perl libtry-tiny-perl libexcel-writer-xlsx-perl libmime-base64-urlsafe-perl  libfile-copy-recursive-perl cgmanager cgmanager-utils
 </code>
@@ -26,6 +27,7 @@ cp send_mail_defaults_template.pm send_mail_defaults.pm
 Edit send_mail_defaults.pm 
 
 
+
 Insert a line into mailq (like example)
 
 Start manual send_mail.pl (<code>perl send_mail.pl</code>) or add to /etc/crontab (every 2 minutes start send_mail.pl):
@@ -33,6 +35,8 @@ Start manual send_mail.pl (<code>perl send_mail.pl</code>) or add to /etc/cronta
 <pre>
 */2 * * * *	root	/opt/mysql-excel-mailer/send_mail_starter.sh
 </pre>
+
+For more information see our WIKI pages!
 
 Enyoj it!
 
