@@ -147,9 +147,17 @@ sub query_to_xlsx {
     }
 
     $workbook = Excel::Writer::XLSX->new($xlsfilename);
-    $workbook->set_properties(
-	 author   => $send_mail_defaults::AUTHOR,
-    );
+    if( $main::decoded_json->{"Author"} != ""  ){
+	    $workbook->set_properties(
+	     author   => $main::decoded_json->{"Author"};,
+               );
+      }
+    else{
+	    $workbook->set_properties(
+	    author   => $send_mail_defaults::AUTHOR,
+           );
+	}
+    
     my $mnun;
     $mnum='@';
     if( $main::decoded_json->{"def_num_format"} neq ""  ){
